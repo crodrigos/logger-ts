@@ -1,2 +1,2 @@
-# logger-ts
-A custom logger npm package for typescript
+# logger
+A very simple custom logger for Typescript CLI

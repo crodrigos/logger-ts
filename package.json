@@ -1,0 +1,39 @@
+{
+  "name": "@crodrigos/logger-ts",
+  "version": "1.1.0",
+  "description": "A very simple custom logger for Typescript CLI",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "jest test",
+    "build": "tsup",
+    "prepublish": "npm run build",
+    "publish": "npm publish --access public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crodrigos/logger-ts.git"
+  },
+  "keywords": [
+    "typescript",
+    "cli"
+  ],
+  "author": "Rodrigo Santos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/crodrigos/logger-ts/issues"
+  },
+  "homepage": "https://github.com/crodrigos/logger-ts#readme",
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "jest": "^30.0.0",
+    "ts-jest": "^29.4.0",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3"
+  }
+}

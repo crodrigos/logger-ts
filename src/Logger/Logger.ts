@@ -71,9 +71,7 @@ export class Logger {
     }
 
     private Format(log: Log): string {
-
         let icon : string = log.type;
-        
         return `[${
             log.date.getFullYear().toString().padStart(2, "0")}-${
             log.date.getMonth().toString().padStart(2, "0")}-${

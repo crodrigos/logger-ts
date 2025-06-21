@@ -5,14 +5,11 @@ interface Log {
 }
 
 enum LogType {
-    Log = "✅",
+    Success = "✅",
+    Log = "",
     Warning = "🟨",
     Error = "❌"
 }
-
-export const LOG_ICON = "✅"
-export const WARN_ICON = "🟨"
-export const ERROR_ICON = "❌"
 
 export class Logger {
 
@@ -34,6 +31,10 @@ export class Logger {
         console.log(this.Format(log))
     }
 
+    public static Success(message: string) {
+        Logger.GetInstance().Success(message);
+    }
+
     public static Log(message: string) {
         Logger.GetInstance().Log(message)
     }
@@ -44,6 +45,14 @@ export class Logger {
 
     public static Error(message: string) {
         Logger.GetInstance().Error(message);
+    }
+
+    public Success(message: string) : void {
+        this.Add({
+            message: message,
+            date: new Date(),
+            type: LogType.Success
+        })
     }
 
     public Log(message: string): void {
@@ -71,9 +80,7 @@ export class Logger {
     }
 
     private Format(log: Log): string {
-
         let icon : string = log.type;
-        
         return `[${
             log.date.getFullYear().toString().padStart(2, "0")}-${
             log.date.getMonth().toString().padStart(2, "0")}-${
